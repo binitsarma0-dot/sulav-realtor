@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sulav Realtor - Top Real Estate Agent in Kharagpur and Medinipur</title>
+<meta name="description" content="Sulav Realtor - Trusted real estate agency in Medinipur and Kharagpur, West Bengal. Buy, sell or rent properties since 2014."/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2E7D52;--green-light:#3D9965;--green-pale:#EAF5EE;
+  --green-mid:#C8E6D4;--gold:#C8A84B;--dark:#1A1A1A;
+  --text:#333;--muted:#6B7280;--white:#fff;--off-white:#F9FAFB;
+  --border:#E5E7EB;--shadow:0 4px 24px rgba(0,0,0,.07);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.12);--radius:12px;--radius-lg:20px;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', Times, serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-heading);line-height:1.25}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:var(--shadow)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:38px;height:38px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:22px;height:22px;fill:white}
+.nav-logo-text{font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:var(--dark)}
+.nav-logo-sub{font-size:.65rem;font-weight:500;color:var(--green);letter-spacing:.1em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--text);position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transition:transform .25s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--green)!important;color:white!important;padding:9px 22px!important;border-radius:8px!important;font-size:.88rem!important;font-weight:600!important}
+.nav-cta:hover{background:var(--green-light)!important}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:20px 5% 28px;z-index:999;box-shadow:var(--shadow-lg)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 0;font-size:1rem;font-weight:500;border-bottom:1px solid var(--border);color:var(--text)}
+.mobile-cta-btn{display:block;margin-top:16px;background:var(--green);color:white!important;text-align:center;padding:13px;border-radius:10px;font-weight:600;border-bottom:none!important}
+#hero{min-height:100vh;padding-top:68px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#F0FAF4 0%,#fff 55%,#EAF5EE 100%)}
+.hero-blob1{position:absolute;right:-100px;top:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(46,125,82,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-blob2{position:absolute;left:-100px;bottom:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,168,75,.06) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-dots{position:absolute;right:5%;top:20%;width:160px;height:160px;background-image:radial-gradient(circle,rgba(46,125,82,.18) 1.5px,transparent 1.5px);background-size:18px 18px;pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;padding:80px 5%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-pale);border:1px solid var(--green-mid);padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:600;color:var(--green);letter-spacing:.05em;margin-bottom:20px}
+.hero-badge span{width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block}
+.hero-title{font-size:clamp(2.2rem,4vw,3.4rem);color:var(--dark);margin-bottom:20px}
+.hero-title em{font-style:normal;color:var(--green)}
+.hero-desc{font-size:1.02rem;color:var(--muted);line-height:1.75;margin-bottom:36px}
+.hero-stats{display:flex;gap:36px;margin-bottom:40px}
+.stat-num{font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--green)}
+.stat-label{font-size:.8rem;color:var(--muted);font-weight:500}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--green);color:white;padding:14px 28px;border-radius:10px;font-weight:600;font-size:.93rem;transition:all .2s;border:2px solid var(--green);display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--green-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,125,82,.25)}
+.btn-secondary{background:transparent;color:var(--green);padding:14px 28px;border-radius:10px;font-weight:600;font-size:.93rem;border:2px solid var(--green);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:var(--green-pale);transform:translateY(-2px)}
+.hero-card{background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:30px;border:1px solid var(--border);position:relative;z-index:1}
+.hero-card h3{font-size:1.25rem;margin-bottom:20px;color:var(--dark)}
+.search-tabs{display:flex;gap:5px;margin-bottom:20px;background:var(--off-white);padding:4px;border-radius:8px}
+.tab-btn{flex:1;padding:8px;border:none;background:none;font-family:inherit;font-size:.85rem;font-weight:600;color:var(--muted);border-radius:6px;cursor:pointer;transition:all .2s}
+.tab-btn.active{background:white;color:var(--green);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+.form-group select{width:100%;padding:10px 36px 10px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.9rem;color:var(--text);background:white;transition:border-color .2s;appearance:none;-webkit-appearance:none}
+.form-group select:focus{outline:none;border-color:var(--green)}
+.search-btn{width:100%;background:var(--green);color:white;border:none;padding:13px;border-radius:10px;font-family:inherit;font-size:.93rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px}
+.search-btn:hover{background:var(--green-light);transform:translateY(-1px)}
+section{padding:90px 5%}
+.container{max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);background:var(--green-pale);padding:5px 14px;border-radius:50px;margin-bottom:12px}
+.section-title{font-size:clamp(1.7rem,3vw,2.4rem);color:var(--dark);margin-bottom:12px}
+.section-desc{font-size:.97rem;color:var(--muted);max-width:560px}
+.section-header{margin-bottom:50px}
+.section-header.center{text-align:center}
+.section-header.center .section-desc{margin:0 auto}
+#about{background:var(--off-white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img-card{background:var(--green);border-radius:var(--radius-lg);padding:44px 38px;color:white;position:relative;overflow:hidden}
+.about-img-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.06);border-radius:50%}
+.about-img-card::after{content:'';position:absolute;bottom:-60px;left:-20px;width:250px;height:250px;background:rgba(255,255,255,.04);border-radius:50%}
+.about-icon-wrap{width:60px;height:60px;background:rgba(255,255,255,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.about-icon-wrap svg{width:30px;height:30px;fill:white}
+.about-img-card h3{font-size:1.5rem;margin-bottom:10px;color:white}
+.about-img-card p{font-size:.9rem;opacity:.85;line-height:1.7}
+.about-float-badge{display:inline-flex;align-items:center;gap:12px;background:white;border-radius:12px;padding:14px 20px;box-shadow:var(--shadow-lg);margin-top:20px}
+.badge-num{font-family:var(--font-heading);font-size:1.8rem;color:var(--green);font-weight:700}
+.badge-txt{font-size:.74rem;color:var(--muted);font-weight:500;line-height:1.4}
+.about-list{margin:24px 0;display:flex;flex-direction:column;gap:14px}
+.about-item{display:flex;gap:12px;align-items:flex-start}
+.about-check{flex-shrink:0;width:22px;height:22px;background:var(--green-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.about-check svg{width:11px;height:11px;stroke:var(--green);fill:none;stroke-width:2.5}
+.about-item-text strong{display:block;font-weight:600;font-size:.93rem}
+.about-item-text span{font-size:.86rem;color:var(--muted)}
+.ceo-card{display:flex;align-items:center;gap:14px;background:white;border-radius:12px;padding:16px 20px;border:1px solid var(--border);margin-top:24px}
+.ceo-avatar{width:46px;height:46px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:1.1rem;color:white;font-weight:700;flex-shrink:0}
+.ceo-name{font-weight:600;font-size:.93rem}
+.ceo-role{font-size:.78rem;color:var(--muted)}
+#services{background:white}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.service-card{border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:30px 26px;transition:all .3s;position:relative;overflow:hidden;background:white}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transition:transform .3s}
+.service-card:hover{border-color:var(--green-mid);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:52px;height:52px;background:var(--green-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background .3s}
+.service-card:hover .service-icon{background:var(--green)}
+.service-icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.8;transition:stroke .3s}
+.service-card:hover .service-icon svg{stroke:white}
+.service-card h3{font-size:1.05rem;margin-bottom:10px}
+.service-card p{font-size:.87rem;color:var(--muted);line-height:1.7}
+.service-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:.84rem;font-weight:600;color:var(--green);transition:gap .2s}
+.service-card:hover .service-link{gap:10px}
+#properties{background:var(--off-white)}
+.props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.prop-card{background:white;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;border:1px solid var(--border)}
+.prop-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.prop-img{height:190px;position:relative;overflow:hidden}
+.prop-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.prop-img-inner.res{background:linear-gradient(135deg,#D4EDDA,#A8D5B5)}
+.prop-img-inner.com{background:linear-gradient(135deg,#FFF3CD,#FFE0A0)}
+.prop-img-inner.ind{background:linear-gradient(135deg,#D6E4F7,#A8C8EF)}
+.prop-type-badge{position:absolute;top:12px;left:12px;background:white;border-radius:6px;padding:3px 9px;font-size:.7rem;font-weight:700;color:var(--green);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.prop-price-badge{position:absolute;top:12px;right:12px;background:var(--green);border-radius:6px;padding:3px 9px;font-size:.76rem;font-weight:700;color:white}
+.prop-body{padding:20px}
+.prop-body h3{font-size:.97rem;margin-bottom:6px;line-height:1.4}
+.prop-location{display:flex;align-items:center;gap:4px;font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.prop-location svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2;flex-shrink:0}
+.prop-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.prop-tag{background:var(--green-pale);color:var(--green);padding:3px 9px;border-radius:6px;font-size:.74rem;font-weight:600}
+.prop-enquire{width:100%;padding:10px;background:var(--green-pale);border:1.5px solid var(--green-mid);border-radius:8px;font-family:inherit;font-size:.86rem;font-weight:600;color:var(--green);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.prop-enquire:hover{background:var(--green);color:white;border-color:var(--green)}
+#testimonials{background:white}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.testi-card{border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:26px;transition:all .3s}
+.testi-card:hover{border-color:var(--green-mid);box-shadow:var(--shadow)}
+.testi-stars{display:flex;gap:3px;margin-bottom:12px}
+.testi-stars span{color:var(--gold);font-size:.9rem}
+.testi-card p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:16px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:white;flex-shrink:0}
+.testi-name{font-weight:600;font-size:.88rem}
+.testi-tag{font-size:.73rem;color:var(--muted)}
+#tools{background:var(--green);padding:60px 5%}
+.tools-inner{max-width:1200px;margin:0 auto;display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:center}
+.tool-card{background:rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:26px 28px;color:white;border:1px solid rgba(255,255,255,.2);text-align:center;flex:1;min-width:180px;max-width:260px;transition:background .2s}
+.tool-card:hover{background:rgba(255,255,255,.2)}
+.tool-card svg{width:30px;height:30px;stroke:rgba(255,255,255,.85);fill:none;stroke-width:1.6;margin:0 auto 10px;display:block}
+.tool-card h4{font-family:var(--font-heading);font-size:1.05rem;margin-bottom:6px}
+.tool-card p{font-size:.8rem;opacity:.75;line-height:1.5}
+.tools-cta{display:flex;align-items:center;justify-content:center;background:white;color:var(--green);border-radius:12px;padding:16px 28px;font-weight:700;font-size:.93rem;white-space:nowrap;transition:transform .2s;flex-shrink:0}
+.tools-cta:hover{transform:scale(1.04)}
+#contact{background:var(--off-white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.contact-info-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px}
+.contact-icon{width:44px;height:44px;background:var(--green-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:1.8}
+.contact-info-label{font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:3px}
+.contact-info-val{font-size:.93rem;font-weight:500;color:var(--dark)}
+.contact-info-val a{color:var(--green)}
+.whatsapp-btn{display:flex;align-items:center;gap:10px;background:#25D366;color:white;padding:13px 22px;border-radius:12px;font-weight:600;font-size:.93rem;transition:all .2s;margin-top:6px}
+.whatsapp-btn:hover{background:#1ebe5d;transform:translateY(-2px)}
+.whatsapp-btn svg{width:20px;height:20px;fill:white;flex-shrink:0}
+.contact-form{background:white;border-radius:var(--radius-lg);padding:34px;border:1px solid var(--border)}
+.contact-form h3{font-size:1.35rem;margin-bottom:22px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-group{margin-bottom:14px}
+.cf-group label{display:block;font-size:.73rem;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+.cf-group input,.cf-group select,.cf-group textarea{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.9rem;color:var(--text);background:white;transition:border-color .2s;resize:vertical}
+.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{outline:none;border-color:var(--green)}
+.cf-submit{width:100%;background:var(--green);color:white;border:none;padding:13px;border-radius:10px;font-family:inherit;font-size:.93rem;font-weight:600;cursor:pointer;transition:all .2s;margin-top:4px}
+.cf-submit:hover{background:var(--green-light);transform:translateY(-1px)}
+footer{background:var(--dark);color:rgba(255,255,255,.7);padding:60px 5% 28px}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:44px;margin-bottom:44px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-logo-icon{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.footer-logo-icon svg{width:18px;height:18px;fill:white}
+.footer-logo-text{font-family:var(--font-heading);font-size:1.1rem;color:white;font-weight:700}
+.footer-brand p{font-size:.86rem;line-height:1.7;max-width:280px}
+.footer-col h4{color:white;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-links a{font-size:.86rem;color:rgba(255,255,255,.6);transition:color .2s}
+.footer-links a:hover{color:var(--green-light)}
+.fci{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px}
+.fci svg{width:15px;height:15px;stroke:var(--green-light);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.fci span{font-size:.83rem;color:rgba(255,255,255,.65)}
+.footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:.8rem}
+.footer-bottom a{color:var(--green-light)}
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:999;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.4);transition:transform .2s;animation:pulse 2.5s infinite}
+.float-wa:hover{transform:scale(1.1)}
+.float-wa svg{width:26px;height:26px;fill:white}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4)}50%{box-shadow:0 6px 36px rgba(37,211,102,.65)}}
+/* FADE-IN: visible by default, JS adds animation */
+.fade-in{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
+.js-on .fade-in{opacity:0;transform:translateY(22px)}
+.js-on .fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:36px}
+  .hero-blob1,.hero-dots{display:none}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .props-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:640px){
+  section{padding:60px 4%}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .services-grid,.props-grid,.testi-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+  .hero-inner{padding:44px 4%}
+  .tools-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7" fill="rgba(255,255,255,.35)"/></svg></div>
+    <div><div class="nav-logo-text">Sulav Realtor</div><div class="nav-logo-sub">Est. 2014 &middot; Medinipur</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About Us</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#properties" class="mobile-link">Properties</a>
+  <a href="#testimonials" class="mobile-link">Client Reviews</a>
+  <a href="#contact" class="mobile-cta-btn">Call Us: +91 74790 07900</a>
+</div>
+<section id="hero">
+  <div class="hero-blob1"></div><div class="hero-blob2"></div><div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span></span> Trusted Since 2014 &middot; West Bengal</div>
+      <h1 class="hero-title">Find Your <em>Dream Property</em> in Medinipur</h1>
+      <p class="hero-desc">Sulav Realtor is the leading real estate agency in Medinipur &amp; Kharagpur &mdash; helping you buy, sell, and rent residential, commercial, and industrial properties with complete confidence.</p>
+      <div class="hero-stats">
+        <div><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+        <div><div class="stat-num">500+</div><div class="stat-label">Happy Clients</div></div>
+        <div><div class="stat-num">4</div><div class="stat-label">Service Areas</div></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#properties" class="btn-primary">Browse Properties</a>
+        <a href="tel:+917479007900" class="btn-secondary">+91 74790 07900</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Search Properties</h3>
+      <div class="search-tabs">
+        <button class="tab-btn active" onclick="setTab(this)">Buy</button>
+        <button class="tab-btn" onclick="setTab(this)">Rent</button>
+        <button class="tab-btn" onclick="setTab(this)">Sell</button>
+      </div>
+      <div class="form-group"><label>Location</label>
+        <select><option value="">All Areas</option><option>Paschim, Medinipur</option><option>Digha, Medinipur</option><option>Keranitola, Medinipur</option><option>Raja Bazar, Medinipur</option><option>Tantigeria, Medinipur</option><option>Kharagpur</option><option>Kharagpur Railway Settlement</option></select>
+      </div>
+      <div class="form-group"><label>Property Type</label>
+        <select><option value="">All Types</option><option>Residential Plot</option><option>Individual House / Villa</option><option>Commercial Land</option><option>Commercial Shop</option><option>Industrial Land / Plot</option></select>
+      </div>
+      <div class="form-group"><label>Budget</label>
+        <select><option value="">Any Budget</option><option>Under Rs. 10 Lakh</option><option>Rs. 10L - Rs. 50L</option><option>Rs. 50L - Rs. 1 Crore</option><option>Rs. 1Cr - Rs. 5Cr</option><option>Above Rs. 5 Crore</option></select>
+      </div>
+      <button class="search-btn" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">Search Properties</button>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-in">
+        <div class="about-img-card">
+          <div class="about-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7" rx="1"/></svg></div>
+          <h3>Paschim Medinipur's Most Trusted Realtor</h3>
+          <p>Operating from the heart of Medinipur, we bring deep local knowledge and a genuine commitment to every client's real estate journey.</p>
+        </div>
+        <div class="about-float-badge"><div class="badge-num">2014</div><div class="badge-txt">Year of<br>Establishment</div></div>
+      </div>
+      <div class="fade-in">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Your Reliable Real Estate Partner in West Bengal</h2>
+        <p style="color:var(--muted);line-height:1.75;font-size:.96rem;margin-bottom:4px">Since 2014, Sulav Realtor has served as a trusted solution for all real estate challenges in Medinipur and Kharagpur. We assist buyers, sellers, and investors across residential, commercial, and industrial segments.</p>
+        <div class="about-list">
+          <div class="about-item"><div class="about-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="about-item-text"><strong>Deep Local Market Knowledge</strong><span>Up-to-date data on prices and investment opportunities across Medinipur &amp; Kharagpur.</span></div></div>
+          <div class="about-item"><div class="about-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="about-item-text"><strong>Legal Verification Support</strong><span>We verify building approvals from municipalities, fire departments, and all authorities.</span></div></div>
+          <div class="about-item"><div class="about-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="about-item-text"><strong>Excellent Negotiation</strong><span>Our team ensures you get the best value whether buying, selling, or renting.</span></div></div>
+          <div class="about-item"><div class="about-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="about-item-text"><strong>End-to-End Assistance</strong><span>We support clients through both pre- and post-project development phases.</span></div></div>
+        </div>
+        <div class="ceo-card">
+          <div class="ceo-avatar">SM</div>
+          <div><div class="ceo-name">Sutirtho Maiti</div><div class="ceo-role">CEO &amp; Founder, Sulav Realtor</div></div>
+          <div style="margin-left:auto;font-size:.73rem;color:var(--muted);text-align:right">Individual Proprietor<br>Est. 2014</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="services">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">From finding your first home to closing large commercial deals &mdash; we handle every aspect of real estate in Medinipur and Kharagpur.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h3>Real Estate Agent</h3><p>As trusted local agents, we connect buyers and sellers efficiently with honest guidance, transparent dealings, and the best listings across the region.</p><a href="#contact" class="service-link">Get in Touch &rarr;</a></div>
+      <div class="service-card fade-in"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7"/></svg></div><h3>Buying Property</h3><p>We match you with the best properties within your budget, verify all legal documents, and negotiate on your behalf for maximum value.</p><a href="#properties" class="service-link">Browse Listings &rarr;</a></div>
+      <div class="service-card fade-in"><div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><h3>Sell Property</h3><p>We market your property to our wide database of serious buyers and manage all negotiations so you get the best possible deal.</p><a href="#contact" class="service-link">List Your Property &rarr;</a></div>
+      <div class="service-card fade-in"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Rental Property</h3><p>Find the right rental in Medinipur or Kharagpur, or let us handle the rental process for your property with vetted tenants.</p><a href="#contact" class="service-link">Find Rentals &rarr;</a></div>
+      <div class="service-card fade-in"><div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div><h3>Commercial Property</h3><p>We specialize in large commercial and institutional land deals &mdash; from Digha coastal plots to industrial land near Kharagpur.</p><a href="#properties" class="service-link">View Commercial &rarr;</a></div>
+      <div class="service-card fade-in"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Legal Verification</h3><p>Our team verifies building approvals from the municipality, fire department, and all relevant authorities to protect your investment.</p><a href="#contact" class="service-link">Learn More &rarr;</a></div>
+    </div>
+  </div>
+</section>
+<section id="properties">
+  <div class="container">
+    <div class="section-header fade-in" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+      <div><div class="section-label">Active Listings</div><h2 class="section-title">Featured Properties</h2><p class="section-desc">Explore our current listings across Medinipur and Kharagpur.</p></div>
+      <a href="#contact" class="btn-primary" style="white-space:nowrap;flex-shrink:0">Post Your Requirement &rarr;</a>
+    </div>
+    <div class="props-grid">
+      <div class="prop-card fade-in">
+        <div class="prop-img"><div class="prop-img-inner res" style="font-size:3.5rem">&#127969;</div><span class="prop-type-badge">RESIDENTIAL</span><span class="prop-price-badge">Rs. 3 Lakh</span></div>
+        <div class="prop-body"><h3>1.70 Acre Residential Plot for Sale</h3><div class="prop-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Paschim, Medinipur, West Bengal</div><div class="prop-meta"><span class="prop-tag">1.70 Acre</span><span class="prop-tag">Residential Plot</span><span class="prop-tag">For Sale</span></div><button class="prop-enquire" onclick="enquire('1.70 Acre Residential Plot, Paschim Medinipur')">Send Enquiry</button></div>
+      </div>
+      <div class="prop-card fade-in">
+        <div class="prop-img"><div class="prop-img-inner com" style="font-size:3.5rem">&#127958;</div><span class="prop-type-badge">COMMERCIAL</span><span class="prop-price-badge">Rs. 9 Crore</span></div>
+        <div class="prop-body"><h3>300 Decimal Land Near Digha Gate</h3><div class="prop-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Digha, Medinipur, West Bengal</div><div class="prop-meta"><span class="prop-tag">300 Dismil</span><span class="prop-tag">Commercial Land</span><span class="prop-tag">For Sale</span></div><button class="prop-enquire" onclick="enquire('300 Decimal Commercial Land near Digha Gate')">Send Enquiry</button></div>
+      </div>
+      <div class="prop-card fade-in">
+        <div class="prop-img"><div class="prop-img-inner ind" style="font-size:3.5rem">&#127981;</div><span class="prop-type-badge">INDUSTRIAL</span><span class="prop-price-badge">Rs. 4 Crore</span></div>
+        <div class="prop-body"><h3>72 Katha Industrial Land with Shed</h3><div class="prop-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Opp. Tata Bearing, Kharagpur</div><div class="prop-meta"><span class="prop-tag">72 Katha</span><span class="prop-tag">Industrial + Shed</span><span class="prop-tag">For Sale</span></div><button class="prop-enquire" onclick="enquire('72 Katha Industrial Land with Shed, Kharagpur')">Send Enquiry</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="tools">
+  <div class="tools-inner">
+    <div style="color:white;text-align:center;flex-shrink:0;padding:0 10px"><div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:6px">Free Tools</div><div style="font-family:var(--font-heading);font-size:1.55rem">Helpful Calculators</div></div>
+    <div class="tool-card"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><h4>EMI Calculator</h4><p>Estimate your monthly home loan payments instantly.</p></div>
+    <div class="tool-card"><svg viewBox="0 0 24 24"><path d="M21 21H3V3"/><path d="M7 14l4-4 4 4 4-4"/></svg><h4>Area Converter</h4><p>Convert between Bigha, Katha, Dismil, Acre and Sq. Ft.</p></div>
+    <div class="tool-card"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><h4>Post Requirement</h4><p>Tell us what you need and we will find the right match.</p></div>
+    <a href="#contact" class="tools-cta">Contact Us &rarr;</a>
+  </div>
+</div>
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center fade-in"><div class="section-label">Client Reviews</div><h2 class="section-title">What Our Clients Say</h2><p class="section-desc">Real feedback from people who trusted Sulav Realtor with their property decisions.</p></div>
+    <div class="testi-grid">
+      <div class="testi-card fade-in"><div class="testi-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div><p>"The team verified building approvals from the municipality and fire department. Extremely thorough and professional service throughout."</p><div class="testi-author"><div class="testi-avatar">AK</div><div><div class="testi-name">Akshit</div><div class="testi-tag">Property Buyer</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div><p>"Sulav Realtor helped me find an independent house with a covered balcony exactly as I described. Fast and genuinely helpful team."</p><div class="testi-author"><div class="testi-avatar">ME</div><div><div class="testi-name">Mehul</div><div class="testi-tag">Home Buyer</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div><p>"Excellent negotiation. They handled my house purchase completely and got me a great price well within my budget. Highly recommend."</p><div class="testi-author"><div class="testi-avatar">AG</div><div><div class="testi-name">Anindya Ranjan Ghosh</div><div class="testi-tag">Property Buyer</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div><p>"Genuine property service delivered with full transparency. I always felt informed and supported throughout the entire process."</p><div class="testi-author"><div class="testi-avatar">SP</div><div><div class="testi-name">Supriya</div><div class="testi-tag">Property Seller</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div><p>"Fast service delivery from start to finish. They understood my requirements immediately and showed perfect options without delay."</p><div class="testi-author"><div class="testi-avatar">UD</div><div><div class="testi-name">Uma Devi</div><div class="testi-tag">Residential Buyer</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div><p>"Best experience overall. The team was knowledgeable, prompt, and made the entire property buying process completely stress-free."</p><div class="testi-author"><div class="testi-avatar">CK</div><div><div class="testi-name">Chandrabhan Kushwaha</div><div class="testi-tag">Property Buyer</div></div></div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <div class="section-header center fade-in"><div class="section-label">Get In Touch</div><h2 class="section-title">Contact Sulav Realtor</h2><p class="section-desc">Have a property in mind, or want to list yours? Reach out &mdash; we are here to help.</p></div>
+    <div class="contact-grid">
+      <div class="fade-in">
+        <div class="contact-info-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="contact-info-label">Office Address</div><div class="contact-info-val">Chotobazar Road, Boxi Bazaar,<br>Paschim Medinipur, West Bengal - 721101</div></div></div>
+        <div class="contact-info-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 3.14 2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14h.01z"/></svg></div><div><div class="contact-info-label">Phone Number</div><div class="contact-info-val"><a href="tel:+917479007900">+91 74790 07900</a></div></div></div>
+        <div class="contact-info-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="contact-info-label">Email Address</div><div class="contact-info-val"><a href="mailto:midfinservices@gmail.com">midfinservices@gmail.com</a></div></div></div>
+        <div class="contact-info-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><div class="contact-info-label">Business Hours</div><div class="contact-info-val">Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: By Appointment</div></div></div>
+        <a href="https://api.whatsapp.com/send?phone=917479007900&text=Hello!%20I%20found%20your%20website%20and%20am%20interested%20in%20your%20properties." class="whatsapp-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
+      </div>
+      <div class="contact-form fade-in">
+        <h3>Send an Enquiry</h3>
+        <div class="form-row"><div class="cf-group"><label>Your Name</label><input type="text" placeholder="Full name" id="cf-name"/></div><div class="cf-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX" id="cf-phone"/></div></div>
+        <div class="cf-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="cf-group"><label>I Want To</label><select id="cf-intent"><option value="">Select...</option><option>Buy a Property</option><option>Sell a Property</option><option>Rent a Property</option><option>Post a Requirement</option><option>General Enquiry</option></select></div>
+        <div class="cf-group"><label>Message</label><textarea rows="4" placeholder="Tell us about your requirement..." id="cf-msg"></textarea></div>
+        <button class="cf-submit" onclick="submitForm()">Send Enquiry &rarr;</button>
+        <p style="font-size:.76rem;color:var(--muted);margin-top:10px;text-align:center">We typically respond within a few hours on business days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7" fill="rgba(255,255,255,.3)"/></svg></div><div class="footer-logo-text">Sulav Realtor</div></div>
+      <p>Your trusted real estate partner in Medinipur &amp; Kharagpur, West Bengal. Helping clients buy, sell, and rent properties since 2014.</p>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><a href="tel:+917479007900" style="background:var(--green);color:white;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600">+91 74790 07900</a><a href="https://api.whatsapp.com/send?phone=917479007900" target="_blank" rel="noopener" style="background:#25D366;color:white;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600">WhatsApp</a></div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#services">Our Services</a></li><li><a href="#properties">Find Property</a></li><li><a href="#testimonials">Client Reviews</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Service Areas</h4><ul class="footer-links"><li><a href="#properties">Paschim, Medinipur</a></li><li><a href="#properties">Digha, Medinipur</a></li><li><a href="#properties">Tantigeria</a></li><li><a href="#properties">Raja Bazar</a></li><li><a href="#properties">Kharagpur</a></li><li><a href="#properties">Kharagpur Railway</a></li></ul></div>
+    <div class="footer-col"><h4>Contact Info</h4>
+      <div class="fci"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Chotobazar Road, Boxi Bazaar, Paschim Medinipur - 721101</span></div>
+      <div class="fci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 3.14 2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14h.01z"/></svg><span><a href="tel:+917479007900" style="color:rgba(255,255,255,.65)">+91 74790 07900</a></span></div>
+      <div class="fci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span><a href="mailto:midfinservices@gmail.com" style="color:rgba(255,255,255,.65)">midfinservices@gmail.com</a></span></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2024 Sulav Realtor. All Rights Reserved. | Individual Proprietor &middot; Est. 2014</p><p>Medinipur, West Bengal, India</p></div>
+</footer>
+<a class="float-wa" href="https://api.whatsapp.com/send?phone=917479007900&text=Hello!%20I%20found%20your%20website%20and%20am%20interested%20in%20your%20properties." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script>
+document.documentElement.classList.add('js-on');
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);});
+var ham=document.getElementById('hamburger'),mob=document.getElementById('mobileMenu');
+ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');});
+document.querySelectorAll('.mobile-link,.mobile-cta-btn').forEach(function(el){el.addEventListener('click',function(){ham.classList.remove('open');mob.classList.remove('open');});});
+function setTab(el){document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');}
+function enquire(name){window.open('https://api.whatsapp.com/send?phone=917479007900&text='+encodeURIComponent('Hello! I am interested in: '+name+'. Please share more details.'),'_blank');}
+function submitForm(){
+  var name=document.getElementById('cf-name').value.trim();
+  var phone=document.getElementById('cf-phone').value.trim();
+  var intent=document.getElementById('cf-intent').value;
+  var msg=document.getElementById('cf-msg').value.trim();
+  if(!name||!phone){alert('Please enter your name and phone number.');return;}
+  var text='Hi! I am '+name+' ('+phone+'). Intent: '+(intent||'Enquiry')+(msg?'. Message: '+msg:'');
+  window.open('https://api.whatsapp.com/send?phone=917479007900&text='+encodeURIComponent(text),'_blank');
+}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
